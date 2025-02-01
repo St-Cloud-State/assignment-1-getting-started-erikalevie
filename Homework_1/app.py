@@ -11,7 +11,7 @@ def get_all_applications_v2():
 
 
 
-# API to add a book to the database
+# API to add a application to the database
 @app.route('/api/add_application', methods=['POST'])
 def add_application():
     print("adding application")

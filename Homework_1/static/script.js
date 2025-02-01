@@ -1,4 +1,4 @@
-// Array to store book data
+// Array to store application data
 const applications = [];
 var appnumber = 0;
 
@@ -15,7 +15,7 @@ function addApplication() {
 
     };
 
-    // Send the book data to the server via POST request
+    // Send the application data to the server via POST request
     fetch('/api/add_application', {
         method: 'POST',
         headers: {
@@ -28,18 +28,18 @@ function addApplication() {
             // Display a success message or handle errors if needed
             console.log(data.message);
 
-            // Add the new book data to the books array
+            // Add the new application data to the applications array
             applications.push(applicationData);
             console.log(applications)
 
-            // Refresh the book list
+            // Refresh the application list
             displayApplications();
         })
         .catch(error => {
             console.error('Error adding application:', error);
         });
 }
-// Function to add a book to the list and send it to the server
+// Function to add a application to the list and send it to the server
 function check_stat() {
     const application_number = parseInt(document.getElementById('application_number').value, 10);
     
@@ -62,7 +62,7 @@ function check_stat() {
             
 }
 
-// Function to add a book to the list and send it to the server
+// Function to add a application to the list and send it to the server
 function change_stat() {
     const application_number2 = parseInt(document.getElementById('application_number2').value, 10);
     
@@ -78,7 +78,7 @@ function change_stat() {
 
 }
 
-// Function to display books in the list
+// Function to display applications in the list
 function displayApplications() {
     const applicationList = document.getElementById('applicationList');
     applicationList.innerHTML = ''; // Clear existing book list
@@ -91,13 +91,13 @@ function displayApplications() {
         applicationList.appendChild(applicationElement);
     });
 }
-// Function to fetch and display all books from the server
+// Function to fetch and display all applications from the server
 function showAllApplications() {
     fetch('/api/applications')
         .then(response => response.json())
         .then(data => {
             const applicationList = document.getElementById('allbooks');
-            applicationList.innerHTML = ''; // Clear existing book list
+            applicationList.innerHTML = ''; // Clear existing application list
             console.log(data);
             applicationList.textContent = JSON.stringify(data); // Display the list as a string
         })
