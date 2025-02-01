@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>The Acme Financial Corp</title>
+
+</head>
+
+<body>
+    <h1>Acme Loan Application</h1>
+	
+	<!-- Add a div to input book data -->
+    <div id="addApplication">
+        <h2>Create an Application</h2>
+        <input type="text" id="applicationTitle" placeholder="Application Name">
+        <button onclick="addApplication()">Add</button>
+    </div>
+
+<!-- Add a div to input book data -->
+    <h2>Check Application</h2>
+    <input type="text" id="application_number" placeholder="Application Number">
+    <button onclick="check_stat()">Add</button>
+
+<div id="applicationsStatus"></div>
+
+	<!-- Display books in this div -->
+    <div id="applicationList">
+    <!-- Book data will be displayed here dynamically -->
+    </div>
+
+    <button id="showApplicationsButton" onclick="showAllApplications()">Show All Applications</button>	
+    
+	<!-- Display books in this div -->
+    <div id="allapplications">
+        <!-- Book data will be displayed here dynamically -->
+    </div>
+    
+    <h2>Change Application Status</h2>
+    <input type="text" id="application_number2" placeholder="Enter Application Number">
+    <select id="statusSelect">
+        <option value="Received">Received</option>
+        <option value="Processing">Processing</option>
+        <option value="Accepted">Accepted</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Not found">Not found</option>
+    </select>
+    <button onclick="change_stat()">Change Status</button>
+    <div id="updateMessage"></div> <!-- This will display the update result -->
+    
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
